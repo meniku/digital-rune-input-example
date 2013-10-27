@@ -1,0 +1,1 @@
+A very very basic DigitalRunes Input example for working with Commands. Currently there is only one `back`-command which will quit the game when escape is pressed. I will expand the demo for input in multiple layers and mouse input soon.
