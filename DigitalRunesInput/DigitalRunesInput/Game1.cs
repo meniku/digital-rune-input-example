@@ -8,8 +8,11 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
-using DigitalRune.Game.UI;
 using DigitalRune.Game.Input;
+using DigitalRune.Game.UI;
+using DigitalRune.Game.UI.Controls;
+using DigitalRune.Game.UI.Rendering;
+using DigitalRune.Mathematics.Algebra;
 
 namespace DigitalRunesInput
 {
@@ -19,7 +22,6 @@ namespace DigitalRunesInput
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
         InputManager _inputManager;
         UIManager _uiManager;
         
@@ -45,6 +47,13 @@ namespace DigitalRunesInput
             _uiManager = new UIManager(this, _inputManager);
             Services.AddService(typeof(IUIService), _uiManager);
 
+            // Add UI Renderer
+            var content = new ContentManager(Services, "BlendBlueTheme");
+            Theme theme = content.Load<Theme>("Theme");
+            UIRenderer renderer = new UIRenderer(this, theme);
+            Services.AddService(typeof(IUIRenderer), renderer);
+
+            // Add Demo Component
             Components.Add(new InputDemoComponent(this));
 
             base.Initialize();
@@ -56,8 +65,6 @@ namespace DigitalRunesInput
         /// </summary>
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
         }

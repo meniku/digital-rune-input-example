@@ -66,9 +66,6 @@
     <Reference Include="DigitalRune.Animation">
       <HintPath>..\..\..\..\..\..\..\..\..\develop\lib\DigitalRune-Engine\References\XNA\Windows\DigitalRune.Animation.dll</HintPath>
     </Reference>
-    <Reference Include="DigitalRune.Animation.Content.Pipeline">
-      <HintPath>..\..\..\..\..\..\..\..\..\develop\lib\DigitalRune-Engine\References\XNA\Windows\DigitalRune.Animation.Content.Pipeline.dll</HintPath>
-    </Reference>
     <Reference Include="DigitalRune.Game">
       <HintPath>..\..\..\..\..\..\..\..\..\develop\lib\DigitalRune-Engine\References\XNA\Windows\DigitalRune.Game.dll</HintPath>
     </Reference>
@@ -78,26 +75,14 @@
     <Reference Include="DigitalRune.Game.UI">
       <HintPath>..\..\..\..\..\..\..\..\..\develop\lib\DigitalRune-Engine\References\XNA\Windows\DigitalRune.Game.UI.dll</HintPath>
     </Reference>
-    <Reference Include="DigitalRune.Game.UI.Content.Pipeline">
-      <HintPath>..\..\..\..\..\..\..\..\..\develop\lib\DigitalRune-Engine\References\XNA\Windows\DigitalRune.Game.UI.Content.Pipeline.dll</HintPath>
-    </Reference>
     <Reference Include="DigitalRune.Geometry">
       <HintPath>..\..\..\..\..\..\..\..\..\develop\lib\DigitalRune-Engine\References\XNA\Windows\DigitalRune.Geometry.dll</HintPath>
-    </Reference>
-    <Reference Include="DigitalRune.Geometry.Content.Pipeline">
-      <HintPath>..\..\..\..\..\..\..\..\..\develop\lib\DigitalRune-Engine\References\XNA\Windows\DigitalRune.Geometry.Content.Pipeline.dll</HintPath>
     </Reference>
     <Reference Include="DigitalRune.Graphics">
       <HintPath>..\..\..\..\..\..\..\..\..\develop\lib\DigitalRune-Engine\References\XNA\Windows\DigitalRune.Graphics.dll</HintPath>
     </Reference>
-    <Reference Include="DigitalRune.Graphics.Content.Pipeline">
-      <HintPath>..\..\..\..\..\..\..\..\..\develop\lib\DigitalRune-Engine\References\XNA\Windows\DigitalRune.Graphics.Content.Pipeline.dll</HintPath>
-    </Reference>
     <Reference Include="DigitalRune.Mathematics">
       <HintPath>..\..\..\..\..\..\..\..\..\develop\lib\DigitalRune-Engine\References\XNA\Windows\DigitalRune.Mathematics.dll</HintPath>
-    </Reference>
-    <Reference Include="DigitalRune.Mathematics.Content.Pipeline">
-      <HintPath>..\..\..\..\..\..\..\..\..\develop\lib\DigitalRune-Engine\References\XNA\Windows\DigitalRune.Mathematics.Content.Pipeline.dll</HintPath>
     </Reference>
     <Reference Include="DigitalRune.Particles">
       <HintPath>..\..\..\..\..\..\..\..\..\develop\lib\DigitalRune-Engine\References\XNA\Windows\DigitalRune.Particles.dll</HintPath>
@@ -161,16 +146,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InputDemoComponent.cs" />
+    <Compile Include="Commands.cs" />
+    <Compile Include="Components\InputDemoComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="UI Controls\BlockingWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\..\..\..\develop\lib\DigitalRune-Engine\Samples\DigitalRune.Game.UI\UI Themes\BlendBlue\BlendBlueTheme.contentproj">
+      <Project>{68CA309E-2F40-4DA1-82D8-95B6CA2FB996}</Project>
+      <Name>BlendBlueTheme</Name>
+      <XnaReferenceType>Content</XnaReferenceType>
+    </ProjectReference>
     <ProjectReference Include="..\DigitalRunesInputContent\DigitalRunesInputContent.contentproj">
       <Name>DigitalRunesInputContent</Name>
       <XnaReferenceType>Content</XnaReferenceType>
